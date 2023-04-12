@@ -27,7 +27,7 @@ function App() {
       <h1>Guess the color!</h1>
       <div className="box-container">
         {colors.map((color) => {
-          return <div style={{ backgroundColor: color }} className="box" onClick={() => console.log('clicked')}></div>
+          return <div style={{ backgroundColor: color }} className="box" onClick={() => console.log(color)}></div>
         }
         )}
       </div>
