@@ -1,0 +1,39 @@
+
+// Use the following snippet to test your code before submitting
+export const runner = () => {
+  const array = [45, 8978, 23, 5, 9];
+  console.log(sumArray(array));
+  console.log(productArray(array));
+  console.log(maxArray(array));
+};
+
+/*
+  Exercise 1/5
+  Use array.reduce to return the sum of all the numbers in the array
+  The function should return 0 if the array is empty 
+*/
+const sumArray = array => {
+  const sum = array.reduce((a, b) => a + b, 0);
+  return sum; // expected output is 15
+}
+
+
+/* 
+  Exercise 2/5
+  Use array.reduce to return the product of all the numbers in the array
+  The function should return 1 if the array is empty 
+*/
+export function productArray(array) {
+  const product = array.reduce((a, b) => a * b, 1);
+  return product;
+}
+
+
+/* 
+  Exercise 3/5
+  Use array.reduce to return the largest number in the array
+  The function should return -Infinity if the array is empty
+*/
+export function maxArray(array) {
+  return array.reduce((a, b) => Math.max(a, b), -Infinity);
+}
