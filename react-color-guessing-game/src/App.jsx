@@ -1,10 +1,9 @@
-import { useState } from 'react'
-import './App.css'
-import { convertToHex } from './create_hex_color'
+import { useState } from 'react';
+import './App.css';
+import { convertToHex } from './create_hex_color';
 
 function App() {
-
-  const randomNum = () => Math.floor(Math.random() * 255)
+  const randomNum = () => Math.floor(Math.random() * 255);
 
   const generateRandomColors = () => {
     return [
@@ -15,30 +14,37 @@ function App() {
   };
 
   const [colors, setColors] = useState(generateRandomColors());
+  const [labelColor, setLabelColor] = useState(colors[Math.floor(Math.random() * colors.length)]);
+  const [resultMessage, setResultMessage] = useState('');
 
-  const setRandomLabelColor = (colors) => {
-    const randomLabelColor = colors[Math.floor(Math.random() * colors.length)];
-    return randomLabelColor;
-  }
-
+  const handleClick = (clickedColor) => {
+    if (clickedColor === labelColor) {
+      setResultMessage('Correct!');
+    } else {
+      setResultMessage('Try again');
+    }
+  };
 
   return (
     <div className="App">
       <h1>Guess the color!</h1>
       <div className="box-container">
-        {colors.map((color) => {
-          return <div style={{ backgroundColor: color }} className="box" onClick={() => console.log(color)}></div>
-        }
-        )}
+        {colors.map((color, index) => (
+          <div
+            key={index}
+            style={{ backgroundColor: color }}
+            className="box"
+            onClick={() => handleClick(color)}
+          ></div>
+        ))}
       </div>
 
       <div>
-        <label>
-          {setRandomLabelColor(colors)}
-        </label>
+        <label>{labelColor}</label><br />
+        <label>{resultMessage ? resultMessage : 'guess the color!'}</label>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
