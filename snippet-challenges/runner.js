@@ -1,10 +1,10 @@
 
 // Use the following snippet to test your code before submitting
 export const runner = () => {
-  const array = [45, 8978, 23, 5, 9];
-  console.log(sumArray(array));
-  console.log(productArray(array));
-  console.log(maxArray(array));
+  const array = [1, 2, 3, 4, 5];
+  // console.log(sumArray(array));
+  // console.log(productArray(array));
+  // console.log(maxArray(array));
 };
 
 /*
@@ -12,7 +12,7 @@ export const runner = () => {
   Use array.reduce to return the sum of all the numbers in the array
   The function should return 0 if the array is empty 
 */
-const sumArray = array => {
+export const sumArray = array => {
   const sum = array.reduce((a, b) => a + b, 0);
   return sum; // expected output is 15
 }
