@@ -2,6 +2,8 @@ import {
   maxArray,
   productArray,
   sumArray,
+  minArray,
+  averageArray,
 } from "./runner.js";
 
 
@@ -41,14 +43,24 @@ describe("maxArray", () => {
   });
 });
 
-// describe("minArray", () => {
-//   it("should return the smallest number in the array", () => {
-//     expect(minArray([1, 2, 3])).toBe(1);
-//     expect(minArray([1, 2, 3, 4, 5])).toBe(1);
-//     expect(minArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toBe(1);
-//   });
-//
-//   it("should return Infinity if the array is empty", () => {
-//     expect(minArray([])).toBe(Infinity);
-//   });
-// });
+describe("minArray", () => {
+  it("should return the smallest number in the array", () => {
+    expect(minArray([1, 2, 3])).toBe(1);
+    expect(minArray([1, 2, 3, 4, 5])).toBe(1);
+    expect(minArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toBe(1);
+  });
+
+  it("should return -Infinity if the array is empty", () => {
+    expect(minArray([])).toBe(Infinity);
+  });
+});
+
+
+describe("averageArray", () => {
+  it("should return the average of all the numbers in the array", () => {
+    expect(averageArray([1, 2, 3])).toBe(2);
+    expect(averageArray([1, 2, 3, 4, 5])).toBe(3);
+    expect(averageArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toBe(5.5);
+
+  })
+});
