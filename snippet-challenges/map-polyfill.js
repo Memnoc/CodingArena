@@ -17,4 +17,4 @@
   };
 })();
 
-export const myMap = Array.prototype.myMap;
+export const arrayMap = Array.prototype.myMap;

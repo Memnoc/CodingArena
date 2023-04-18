@@ -2,7 +2,7 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { runner } from './runner.js'
-import { myMap } from './map-polyfill.js'
+import { arrayMap } from './map-polyfill.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -22,5 +22,5 @@ document.querySelector('#app').innerHTML = `
 runner();
 
 const numbers = [1, 2, 3, 4, 5];
-const doubledNumbers = numbers.myMap((num) => num * 2);
+const doubledNumbers = numbers.arrayMap((num) => num * 2);
 console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
