@@ -4,7 +4,8 @@ import viteLogo from '/vite.svg'
 import { runner } from './runner.js'
 import { arrayMap } from './map-polyfill.js'
 import { getElementsByStyle } from './getElementsByStyle.js'
-
+import { fetchData, fetchPostData } from './asyncWithFetch.js'
+import { fetchUsersData } from './asyncWithFetch.js'
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -31,15 +32,16 @@ console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
  * You can use the runner function to test your
  * solution before submitting it to the platform.
  */
-export const runner = () => {
-  const div = document.createElement("div");
+const div = document.createElement("div");
 
-  div.style.color = "rgb(255, 255, 255)";
-  div.style.textAlign = "center";
+div.style.color = "rgb(255, 255, 255)";
+div.style.textAlign = "center";
 
-  document.body.appendChild(div);
+document.body.appendChild(div);
 
-  const elements = getElementsByStyle("color", "rgb(255, 255, 255)");
+const elements = getElementsByStyle("color", "rgb(255, 255, 255)");
 
-  console.log(elements);
-};
+console.log(elements);
+fetchData();
+fetchPostData();
+fetchUsersData();

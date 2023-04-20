@@ -13,6 +13,7 @@
       const index = args[1];
       storedValues[index] = callback.apply(thisObj, args);
     })
+    console.log(typeof storedValues);
     return storedValues;
   };
 })();
