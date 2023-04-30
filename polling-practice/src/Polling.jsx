@@ -1,10 +1,10 @@
-import { PropTypes } from 'prop-types'
-import { useState, useEffect, useCallback } from 'react'
+import { PropTypes } from "prop-types";
+import { useState, useEffect, useCallback } from "react";
 
-
+// TODO: something something
 const Polling = ({ apiUrl, pollingInterval }) => {
-  const [data, setData] = useState([])
-  console.log(data)
+  const [data, setData] = useState([]);
+  console.log(data);
 
   const fetchData = useCallback(async () => {
     try {
@@ -12,7 +12,7 @@ const Polling = ({ apiUrl, pollingInterval }) => {
       const newData = await response.json();
       setData(newData);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
     }
   }, [apiUrl]);
   useEffect(() => {
@@ -32,17 +32,14 @@ const Polling = ({ apiUrl, pollingInterval }) => {
         {data.map((item, index) => (
           <li key={index}>{item.first_name}</li>
         ))}
-
       </ul>
-
     </div>
-  )
-}
+  );
+};
 
 Polling.propTypes = {
   apiUrl: PropTypes.string.isRequired,
-  pollingInterval: PropTypes.number.isRequired
+  pollingInterval: PropTypes.number.isRequired,
+};
 
-}
-
-export default Polling
+export default Polling;

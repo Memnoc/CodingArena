@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import './App.css';
-import { convertToHex } from './create_hex_color';
+import { useState } from "react";
+import "./App.css";
+import { convertToHex } from "./create_hex_color";
 
 function App() {
   const randomNum = () => Math.floor(Math.random() * 255);
@@ -9,19 +9,21 @@ function App() {
     return [
       convertToHex(randomNum(), randomNum(), randomNum()),
       convertToHex(randomNum(), randomNum(), randomNum()),
-      convertToHex(randomNum(), randomNum(), randomNum())
+      convertToHex(randomNum(), randomNum(), randomNum()),
     ];
   };
 
   const [colors, setColors] = useState(generateRandomColors());
-  const [labelColor, setLabelColor] = useState(colors[Math.floor(Math.random() * colors.length)]);
-  const [resultMessage, setResultMessage] = useState('');
+  const [labelColor, setLabelColor] = useState(
+    colors[Math.floor(Math.random() * colors.length)]
+  );
+  const [resultMessage, setResultMessage] = useState("");
 
   const handleClick = (clickedColor) => {
     if (clickedColor === labelColor) {
-      setResultMessage('Correct!');
+      setResultMessage("Correct!");
     } else {
-      setResultMessage('Try again');
+      setResultMessage("Try again");
     }
   };
 
@@ -40,8 +42,9 @@ function App() {
       </div>
 
       <div>
-        <label>{labelColor}</label><br />
-        <label>{resultMessage ? resultMessage : 'guess the color!'}</label>
+        <label>{labelColor}</label>
+        <br />
+        <label>{resultMessage ? resultMessage : "guess the color!"}</label>
       </div>
     </div>
   );
