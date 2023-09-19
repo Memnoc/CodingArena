@@ -30,7 +30,6 @@ makeRequest('http://example.com/1', (error, data) => {
 
 ### Promise Pattern
 
-- main function
 - return a new promise with resolve and reject
 - do fetch url
 - then -> get the response
