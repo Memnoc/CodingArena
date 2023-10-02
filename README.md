@@ -4,6 +4,8 @@ The idea is to have the same app functionality and aesthetics reproduced in all 
 
 The prompts for the apps are coming from various websites, including random google and Linkedin searches and clientside.dev.
 
+Thanks all for the inspiration!
+
 ## Patterns - at a glance
 
 ### Callbacks
